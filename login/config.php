@@ -44,7 +44,7 @@ function isValidDeletedUser($username) {
 	$users_array = json_decode($users_data, true);
 	for ($i = 0; $i < count($users_array); $i++) {
 		$user = $users_array[$i];
-		if ($user["username"] == $username) return true;
+		if ($user["username"] == $username && $user["status"] == "deleted") return true;
 	}
 	return false;
 }
@@ -54,7 +54,7 @@ function isValidUsernamePassword($username, $password) {
 	$users_array = json_decode($users_data, true);
 	for ($i = 0; $i < count($users_array); $i++) {
 		$user = $users_array[$i];
-		if ($user["username"] == $username && password_verify($password, $user["password"])) return true;
+		if ($user["username"] == $username && password_verify($password, $user["password"]) && $user["status"] == "active") return true;
 	}
 	return false;
 }
