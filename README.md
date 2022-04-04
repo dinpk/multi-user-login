@@ -1,6 +1,6 @@
-# multiuser-login
+# multi-user-login
 
-A multi-user no-db login system that lets the admin manage user permissions based on application files.
+A multi-user login system that does not require a database. The system lets the admin manage user permissions based on application files.
 
 ![Multi-user Login Screenshot 1](https://i.ibb.co/nb0DjcF/multiuser-login1.png)
 
