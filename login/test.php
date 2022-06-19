@@ -1,27 +1,51 @@
 <?php
-    $users_json = '[
+
+    // strtok($_SERVER["REQUEST_URI"], '?');
+
+    $users_json = '
+    [
         {
-        "username":"admin",
-        "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
-        "user_type":"admin",
-        "permission_files":["index.php","page1.php","page2.php","page3.php"],
-        "status":"active"
+            "users":
+            [
+                {
+                "username":"admin",
+                "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
+                "role":"admin",
+                "status":"active"
+                },
+                {
+                "username":"john",
+                "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
+                "role":"jobs",
+                "status":"active"
+                },
+                {
+                "username":"janet",
+                "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
+                "role":"billing",
+                "status":"active"
+                }
+            ]
         },
         {
-        "username":"john",
-        "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
-        "user_type":"regular",
-        "permission_files":["index.php","page1.php","page3.php"],
-        "status":"active"
-        },
-        {
-        "username":"janet",
-        "password":"$2y$10$9zwJHwGBcENB0SR0HEKgh.afmnPOkcR/XgF4OPcUMeIDsQSt9EvTG",
-        "user_type":"regular",
-        "permission_files":["index.php","page2.php","page3.php"],
-        "status":"active"
+            "roles":
+            [
+                {
+                    "role":"admin",
+                    "permission_paths":["shorts/multi-user-login/index.php","page1.php","page2.php","page3.php"]
+                },
+                {
+                    "role":"jobs",
+                    "permission_paths":["index.php","page1.php","page2.php"]
+                },
+                {
+                    "role":"billing",
+                    "permission_paths":["index.php","page2.php","page3.php"]
+                }
+            ]
         }
-    ]';
+    ]
+    ';
 
     $users_array = json_decode($users_json, true);
     

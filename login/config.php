@@ -1,6 +1,6 @@
 <?php
-define("LOGIN_URL", "http://localhost/shorts/myapp/login/");
-define("HOME_URL", "http://localhost/shorts/myapp/login/home.php");
+define("LOGIN_URL", "http://localhost/shorts/multi-user-login/login/");
+define("HOME_URL", "http://localhost/shorts/multi-user-login/login/home.php");
 define("LOGIN_INFO_FILE", "unguessablefile");
 define("USER_PERMISSION_FILES", "../*.php");
 define("USERNAME_MIN_LENGTH", 5);

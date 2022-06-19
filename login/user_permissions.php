@@ -38,11 +38,15 @@ if (isset($_POST["set_permissions"])) {
 	<link rel="stylesheet" href="styles.css">
 	<script>
 		function checkBoxes(option) {
-			var boxes = document.querySelectorAll("input[type='checkbox"]");
+			var boxes = document.querySelectorAll("input[type='checkbox']");
 			if (option == "check") {
-				for (i = 0; i < boxes.length; i++) 	boxes[i].checked = true;
+				for (i = 0; i < boxes.length; i++) {
+					boxes[i].checked = true;
+				}
 			} else {
-				for (i = 0; i < boxes.length; i++) 	boxes[i].checked = false;
+				for (i = 0; i < boxes.length; i++) {
+					boxes[i].checked = false;
+				}
 			}
 		}
 	</script>
